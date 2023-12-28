@@ -10,3 +10,7 @@ A Custom Computer Store Ordering Process Website using Java Spring Boot, Hiberna
 - Order Form Page for finalizing order, includes Validation API (will include more information soon)
 
 ## Back-End (as of 12/27)
+The Web Application holds:
+1. Domain Classes - Identifying the properties of the Custom computer
+2. Controller Classes - Gathering properties and information, handles GET/POST Requests, etc
+3. View Templates - Providing view GUI in the browser
