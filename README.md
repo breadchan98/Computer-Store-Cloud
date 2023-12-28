@@ -2,6 +2,8 @@
 
 A Custom Computer Store Ordering Process Website using Java Spring Boot, Hibernate, REST API, etc.
 
+![alt text] (src/main/resources/static/images/ComputerParts.png)
+
 ## Front-End (as of 12/27)
 - Home Page website with navigation between home and shop. (will add about page and information at home soon)
 - Create Page for creating a Custom PC (will expand more parts soon)
