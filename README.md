@@ -2,7 +2,7 @@
 
 A Custom Computer Store Ordering Process Website using Java Spring Boot, Hibernate, REST API, etc.
 
-![alt text] (https://github.com/breadchan98/Computer-Store-Cloud/blob/main/src/main/resources/static/images/ComputerParts.png)
+![Alt text](src/main/resources/static/images/ComputerParts.png)
 
 ## Front-End (as of 12/27)
 - Home Page website with navigation between home and shop. (will add about page and information at home soon)
