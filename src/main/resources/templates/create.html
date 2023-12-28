@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Custom Order</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+
+<body>
+    <h1>Create Your Own Custom PC</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/create}">Shop</a>
+      </nav>
+    <hr style="border-top: 3px solid">
+    <img id="homeImage" th:src="@{/images/ComputerParts.png}" />
+
+    <hr style="border-top: 3px solid">
+    <h2 style="text-align: center;">Please Choose Your Own Configuration and hit submit at the bottom!</h2>
+    <hr style="border-top: 3px solid">
+
+    <!--Form tag: when form is submitted, it gathers data in this website and forwards to server in http post request-->
+    <!--Controller handler for grabbing post request for /create -->
+    <form method="POST" th:object="${customPC}"> 
+        <div class="grid">
+                <div class="pc-part">
+                    <h3>Choose an AMD Processor</h3>
+                    <!--ComputerParts comes from ComputerParts.java class AND processor comes from ComputerParts.type-->
+                    <div th:each="ComputerParts : ${processor}">
+                        <!--computerpart is from CustomPCWebController.java and CustomPC.java ArrayList-->
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+
+                <div class="pc-part">
+                    <h3 class="pc-part">Choose a CPU Cooler</h3>
+                    <div th:each="ComputerParts : ${cpucooler}">
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+
+                <div class="pc-part">
+                    <h3 class="pc-part">Choose a Graphics Card</h3>
+                    <div th:each="ComputerParts : ${videocard}">
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+
+                <div class="pc-part">
+                    <h3 class="pc-part">Choose a Motherboard</h3>
+                    <div th:each="ComputerParts : ${motherboard}">
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+
+                <div class="pc-part">
+                    <h3 class="pc-part">Choose RAM Configuration</h3>
+                    <div th:each="ComputerParts : ${memory}">
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+
+                <div class="pc-part">
+                    <h3 class="pc-part">Choose a PC Case</h3>
+                    <div th:each="ComputerParts : ${case}">
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+
+                <div class="pc-part">
+                    <h3 class="pc-part">Choose a Power Supply</h3>
+                    <div th:each="ComputerParts : ${powersupply}">
+                        <input th:field="*{computerpart}" type="checkbox" 
+                            th:value="${ComputerParts.id}"/>
+                        <span th:text="${ComputerParts.name}">PC PART</span><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <h3>Name your Custom PC (idk for nickname)</h3>
+            <input type="text" th:field="*{name}"/>
+        </div>
+          
+        <div class="centered">
+            <button>Submit your PC</button>
+        </div>
+    </form>
+</body>
+</html>

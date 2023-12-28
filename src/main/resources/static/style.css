@@ -1,0 +1,44 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial;
+}
+#homeImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+div.pc-part:nth-child(odd) {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+div.pc-part:nth-child(even) {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+div.pc-part {
+    display: flex;
+    align-items: center;
+}
+.grid:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+div.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+nav {
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial;
+}

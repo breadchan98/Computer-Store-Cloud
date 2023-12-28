@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>TheTechTechCompany LLC Inc. Ltd.</title>
+  <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+
+<body>
+<h1>
+  Welcome to SomeTechCompany LLC, Inc
+</h1>
+  <nav>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/create}">Shop</a>
+  </nav>
+<hr style="border-top: 3px solid">
+<!-- th:src attribute and @{} for context path of img in img tag -->
+<img id="homeImage" th:src="@{/images/ComputerParts.png}"/>
+</body>
+
+</html>
