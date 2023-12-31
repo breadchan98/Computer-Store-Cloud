@@ -22,6 +22,8 @@
 
             <hr style="border-top: 3px solid">
 
+            <span class="validationError" th:if="${#fields.hasErrors()}">Please fill out the missing information before proceeding.</span>
+
             <h3>Shipping Address: </h3>
             <label for="customerName">Name: </label>
             <input type="text" th:field="*{customerName}"/>
