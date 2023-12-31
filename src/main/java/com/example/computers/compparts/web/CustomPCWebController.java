@@ -71,7 +71,7 @@ public class CustomPCWebController {
     @PostMapping //this is used for HTTP Post request (send data to a server for updating resource)
     //PostMapping works with RequestMapping on line 27
     public String processComp(
-        @Valid  CustomPC customPC, Errors errors, @ModelAttribute("customPCOrder") PCOrder pcOrder) {
+        @ModelAttribute("customPC") @Valid CustomPC customPC, Errors errors, @ModelAttribute("customPCOrder") PCOrder pcOrder) {
         
         //If there are errors in creating a PC, it returns to the create html    
         if(errors.hasErrors()) {
