@@ -19,6 +19,8 @@ import com.example.computers.compparts.domain.ComputerParts.Type;
 import com.example.computers.compparts.domain.PCOrder;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import jakarta.validation.Valid; //Used to perform validation before processComp method is called
+import org.springframework.validation.Errors;
 
 
 
@@ -68,7 +70,15 @@ public class CustomPCWebController {
     }
     @PostMapping //this is used for HTTP Post request (send data to a server for updating resource)
     //PostMapping works with RequestMapping on line 27
-    public String processComp(@ModelAttribute("customPC") CustomPC customPC, @ModelAttribute("customPCOrder") PCOrder pcOrder) {
+    public String processComp(
+        @Valid CustomPC customPC, Errors errors, 
+        @ModelAttribute("customPCOrder") PCOrder pcOrder) {
+        
+        //If there are errors in creating a PC, it returns to the create html    
+        if(errors.hasErrors()) {
+            return "create";
+        }
+
         pcOrder.addBuild(customPC); 
         log.info("Processing PC: {}", customPC);
         return "redirect:/orders/current";
