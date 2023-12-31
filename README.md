@@ -12,7 +12,7 @@ Languages and Framework used:
 - Hibernate
 - Maven
 - REST
-- JBDC/JRA
+- JDBC/JPA
 
 ![Alt text](src/main/resources/static/images/ComputerParts.png)
 
