@@ -9,12 +9,19 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
+
 import lombok.Data;
 
 
 @Data
-public class PCOrder {
+public class PCOrder implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    private Long id;
+    private Date builtAt;
 
     @NotBlank(message="Name cannot be empty")
     private String customerName;
